@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HighLook Fashions | Vibrant Uniform Solutions</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: "Montserrat", Arial, sans-serif;
-      background-image: url('https://img.freepik.com/free-vector/hand-painted-pastel-pink-alcohol-ink-background_1048-20371.jpg?semt=ais_hybrid&w=740&q=80');
+      background-image: url('https://img.freepik.com/free-vector/hand-painted-pastel-pink-alcohol-ink-background_1048-20371.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -21,10 +21,12 @@
       color: #222;
     }
 
+    img { max-width: 100%; height: auto; }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     /* HEADER */
@@ -34,13 +36,13 @@
       z-index: 100;
       background: #fffdf6;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      backdrop-filter: blur(8px);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 14px 0;
     }
 
@@ -52,133 +54,51 @@
 
     .logo-box img {
       height: 70px;
-      width: auto;
-      object-fit: contain;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.2;
     }
 
     .brand-text span:first-child {
       font-size: 20px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .brand-text span:last-child {
       font-size: 12px;
-      text-transform: uppercase;
       color: #555;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
     nav a {
-      margin-left: 24px;
       text-decoration: none;
+      font-size: 14px;
       font-weight: 500;
       color: #005f73;
-      font-size: 14px;
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: #ee6c4d;
-      transition: width 0.25s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
     }
 
     /* HERO */
     .hero {
       background: #fdf7eb;
-      padding: 60px 0 70px 0;
+      padding: 60px 0;
     }
 
     .hero-inner {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
       gap: 40px;
-    }
-
-    .hero-content {
-      flex: 1;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid #c9b18a;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
-      color: #83612b;
-      background: #fff;
+      flex-wrap: wrap;
+      align-items: flex-start;
     }
 
     .hero h1 {
       font-size: 40px;
-      margin: 0 0 10px 0;
-    }
-
-    .hero p {
-      font-size: 16px;
-      max-width: 520px;
-      margin-bottom: 12px;
-      color: #444;
-    }
-
-    .hero-cta {
-      margin-top: 22px;
-    }
-
-    .hero-cta a {
-      display: inline-block;
-      padding: 10px 24px;
-      border-radius: 30px;
-      background: #ee6c4d;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.3px;
-      transition: background 0.25s, transform 0.25s;
-    }
-
-    .hero-cta a:hover {
-      background: #d95b3b;
-      transform: translateY(-2px);
-    }
-
-    .hero-side {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
     }
 
     .hero-card {
@@ -186,32 +106,13 @@
       border-radius: 12px;
       padding: 20px;
       max-width: 340px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       border: 1px solid #e2d3b8;
-    }
-
-    .hero-card h3 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-
-    .hero-card p {
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 8px;
-    }
-
-    .hero-card ul {
-      padding-left: 18px;
-      margin: 0;
-      font-size: 13px;
-      color: #555;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     /* SECTIONS */
     .section {
       padding: 70px 0;
-      background: transparent;
     }
 
     .section.alt {
@@ -221,51 +122,31 @@
     .section h2 {
       text-align: center;
       font-size: 26px;
-      margin: 0 0 10px 0;
     }
 
-    .section p.section-intro {
+    .section-intro {
       text-align: center;
       max-width: 650px;
-      margin: 8px auto 32px auto;
-      color: #555;
+      margin: 12px auto 32px;
       font-size: 15px;
+      color: #555;
     }
 
-    /* CARDS – centered groups */
+    /* CARDS */
     .cards {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
+      justify-content: center;
     }
 
     .card {
       background: #fff;
       border-radius: 16px;
       padding: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e3d6c2;
       width: 250px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .card ul {
-      margin: 6px 0 0 18px;
-      padding: 0;
-      font-size: 13px;
-      color: #555;
+      border: 1px solid #e3d6c2;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
     /* TESTIMONIALS */
@@ -273,78 +154,28 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
-      margin-top: 24px;
-    }
-
-    @media (max-width: 768px) {
-      .testimonials {
-        grid-template-columns: 1fr;
-      }
     }
 
     .testimonial-card {
       background: #fff;
       border-radius: 16px;
       padding: 22px 22px 20px 32px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       border: 1px solid #e3d6c2;
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
-    .testimonial-card::before {
-      content: "“";
-      position: absolute;
-      font-size: 40px;
-      color: rgba(0, 0, 0, 0.08);
-      top: 4px;
-      left: 10px;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    .testimonial-text {
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-meta {
-      font-size: 13px;
-      color: #777;
-    }
-
-    .testimonial-meta span {
-      display: block;
-    }
-
-    .testimonial-meta span.name {
-      font-weight: 600;
-      color: #222;
-    }
-
-    .testimonial-meta span.role {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* SUPPLIER LOGOS – centered with gaps */
+    /* SUPPLIERS */
     .supplier-logos {
-      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 32px;
+      margin-top: 30px;
       align-items: center;
     }
 
     .supplier-logos img {
       max-height: 70px;
-      width: auto;
-      object-fit: contain;
-      display: block;
     }
 
     /* CONTACT */
@@ -356,52 +187,44 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 30px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 768px) {
-      .contact-inner {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-details p {
-      margin: 6px 0;
-      font-size: 15px;
-      color: #333;
-    }
-
-    .contact-details strong {
-      color: #000;
-    }
-
-    .contact-highlight {
-      font-size: 13px;
-      color: #555;
-      margin-top: 12px;
     }
 
     .contact-box {
       background: #fff;
       border-radius: 16px;
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #333;
+      padding: 16px;
       border: 1px solid #e3d6c2;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
-    /* FOOTER */
     footer {
       background: #f4e5cf;
-      color: #555;
       text-align: center;
-      padding: 18px 10px;
+      padding: 18px;
       font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 32px; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { justify-content: center; }
+      .testimonials { grid-template-columns: 1fr; }
+      .logo-box img { height: 55px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 26px; }
+      .brand-text span:first-child { font-size: 16px; }
     }
   </style>
 </head>
+
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="container header-inner">
@@ -590,5 +413,6 @@
   <footer>
     © 2025 HighLook Fashions. All rights reserved.
   </footer>
+
 </body>
 </html>
