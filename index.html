@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HighLook Fashions | Vibrant Uniform Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Montserrat", Arial, sans-serif;
+      background-image: url('https://img.freepik.com/free-vector/hand-painted-pastel-pink-alcohol-ink-background_1048-20371.jpg?semt=ais_hybrid&w=740&q=80');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fffdf6;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-box img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-text span:first-child {
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span:last-child {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #005f73;
+      font-size: 14px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #ee6c4d;
+      transition: width 0.25s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      background: #fdf7eb;
+      padding: 60px 0 70px 0;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #c9b18a;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      color: #83612b;
+      background: #fff;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin: 0 0 10px 0;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 520px;
+      margin-bottom: 12px;
+      color: #444;
+    }
+
+    .hero-cta {
+      margin-top: 22px;
+    }
+
+    .hero-cta a {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 30px;
+      background: #ee6c4d;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .hero-cta a:hover {
+      background: #d95b3b;
+      transform: translateY(-2px);
+    }
+
+    .hero-side {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 340px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e2d3b8;
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .hero-card ul {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 70px 0;
+      background: transparent;
+    }
+
+    .section.alt {
+      background: #faf3e7;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 26px;
+      margin: 0 0 10px 0;
+    }
+
+    .section p.section-intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 8px auto 32px auto;
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* CARDS – centered groups */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e3d6c2;
+      width: 250px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .card ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 22px 20px 32px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e3d6c2;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      font-size: 40px;
+      color: rgba(0, 0, 0, 0.08);
+      top: 4px;
+      left: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-meta {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .testimonial-meta span {
+      display: block;
+    }
+
+    .testimonial-meta span.name {
+      font-weight: 600;
+      color: #222;
+    }
+
+    .testimonial-meta span.role {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* SUPPLIER LOGOS – centered with gaps */
+    .supplier-logos {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .supplier-logos img {
+      max-height: 70px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #fdf7eb;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-details p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .contact-details strong {
+      color: #000;
+    }
+
+    .contact-highlight {
+      font-size: 13px;
+      color: #555;
+      margin-top: 12px;
+    }
+
+    .contact-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: #333;
+      border: 1px solid #e3d6c2;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f4e5cf;
+      color: #555;
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo-box">
+        <img src="images/logo.jpg" alt="HighLook Fashions Logo" />
+        <div class="brand-text">
+          <span>HIGHLOOK FASHIONS</span>
+          <span>UNIFORMS • WORKWEAR • BRANDING</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#suppliers">Suppliers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">25 years of trusted uniform solutions</div>
+        <h1>Dress Your Team with Confidence</h1>
+        <p>
+          HighLook Fashions specializes in premium school, corporate, industrial, and medical uniforms tailored for daily comfort, durability, and a professional look.
+        </p>
+        <p>
+          From fabric selection to final stitching, every piece reflects our experience and commitment to quality.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact">Enquire for Bulk Orders</a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-card">
+          <h3>Why Institutions Trust Us</h3>
+          <p>Serving schools, hospitals, factories, and service brands for more than two decades.</p>
+          <ul>
+            <li>End-to-end uniform solutions</li>
+            <li>Fabric and color consistency</li>
+            <li>On-time delivery for bulk orders</li>
+            <li>Custom logo embroidery &amp; printing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="section" id="collections">
+    <div class="container">
+      <h2>Our Core Collections</h2>
+      <p class="section-intro">
+        HighLook Fashions provides tailored solutions for institutions that value consistency, comfort, and brand identity across their uniforms.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>School &amp; College Uniforms</h3>
+          <p>Smart, comfortable and durable uniforms designed for students of all age groups.</p>
+        </div>
+        <div class="card">
+          <h3>Corporate &amp; Industrial Wear</h3>
+          <p>Professional uniforms engineered for offices, factories, and industrial operations.</p>
+        </div>
+        <div class="card">
+          <h3>Medical &amp; Healthcare</h3>
+          <p>Functional scrubs, lab coats, and hospital uniforms for doctors, nurses, and staff.</p>
+        </div>
+        <div class="card">
+          <h3>Security &amp; Service Sector</h3>
+          <p>Uniforms for security, hospitality, transport, hotel, and housekeeping teams.</p>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="cards">
+        <div class="card">
+          <h3>Types of Uniforms</h3>
+          <ul>
+            <li>School &amp; college uniforms</li>
+            <li>Factory &amp; industrial workwear</li>
+            <li>NCC &amp; security uniforms</li>
+            <li>Doctors, nurses &amp; lab coats</li>
+            <li>Hotel, catering &amp; service uniforms</li>
+            <li>Showroom &amp; corporate uniforms</li>
+            <li>Custom uniforms for special requirements</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Ready-Made Garments</h3>
+          <p>
+            Ready-made shirts and trousers available in multiple colors and sizes, ideal for schools, industries, and retailers requiring quick supply.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section alt" id="testimonials">
+    <div class="container">
+      <h2>What Our Partners Say</h2>
+      <p class="section-intro">
+        Long-term supplier and institution partnerships reflect the reliability, consistency, and professionalism that HighLook Fashions brings to every order.
+      </p>
+
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            HighLook Fashions has maintained fabric quality and delivery timelines for years, making large-volume school and college orders smooth and predictable for our distribution network.
+          </div>
+          <div class="testimonial-meta">
+            <span class="name">Senior Representative</span>
+            <span class="role">Leading Uniform Fabric Supplier</span>
+            <span>Partnership of 10+ years</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            Their team understands institutional requirements clearly, from branding guidelines to fit and finish, which helps recommend them confidently for bulk corporate and industrial uniform projects.
+          </div>
+          <div class="testimonial-meta">
+            <span class="name">Key Account Manager</span>
+            <span class="role">Corporate Apparel Partner</span>
+            <span>Working together across multiple client sites</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPLIERS -->
+  <section class="section" id="suppliers">
+    <div class="container">
+      <h2>Our Trusted Associations</h2>
+      <p class="section-intro">
+        HighLook Fashions collaborates with reputed mills, institutes, and brands to ensure consistent quality, availability, and compliance with institutional standards.
+      </p>
+
+      <div class="supplier-logos">
+        <img src="https://yt3.googleusercontent.com/BCCDgxEKptbBtn-ab0fMRqGljP57vyOwO_wRpZK629L3sOHwqj2_UFGEh4Szjx9pZbl5uZty=s900-c-k-c0x00ffffff-no-rj" alt="Supplier 1" />
+        <img src="https://www.kmknitwear.com/assets/images/logo.png" alt="Supplier 2" />
+        <img src="https://www.tnprivatejobs.tn.gov.in/asset/docs/co_profilephoto/LOGO2250227164413841.jpg" alt="Supplier 3" />
+        <img src="https://getmyuniversity.com/images/university_images/logo-karpagam-faculty-of-medical-sciences-research-coimbatore.jpg" alt="Supplier 4" />
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ1IrgKxVOd1tVEO_klAMb90oX146fDu9Qdn3pHnDlx7EiV7j2J" alt="Supplier 5" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa25S_70FoANg2vFDZqG0LXWqbaVE6gleLjJX_iUczTfanKN9" alt="Supplier 6" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQveiESX9ayWxIvZMPaiFnFRcL9w5Sl_HUShm4VTXU9vCEwPxD7" alt="Supplier 7" />
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCNd0zSlULu3jtk8Wm4i1Qc4GjFD0767A-mSEBbeNkhO16Dcpy" alt="Supplier 8" />
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVgFzBCQPx1rziFw8P3uwCwnJBlH0E6wOOg&s" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-details">
+        <h2>Contact &amp; Enquiries</h2>
+        <p><strong>Address:</strong> Mahalaxmi Complex, First Floor, Palladam Road, Arulpuram Bus Stop, Tiruppur - 641605</p>
+        <p><strong>Mobile:</strong> 99942 79390 &nbsp;|&nbsp; 97886 11143</p>
+        <p><strong>Email:</strong> highlooktailors@gmail.com</p>
+        <p class="contact-highlight">
+          For school, college, hospital, industrial, and corporate uniform enquiries, please share requirement details and approximate quantity.
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <strong>Business Hours</strong><br />
+        Monday to Saturday: 9:30 AM – 8:00 PM<br />
+        Sunday: On prior appointment for institutional meetings<br /><br />
+        <strong>Service Location</strong><br />
+        Tiruppur and surrounding regions, with capability to handle bulk orders for institutions across Tamil Nadu.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 HighLook Fashions. All rights reserved.
+  </footer>
+</body>
+</html>
